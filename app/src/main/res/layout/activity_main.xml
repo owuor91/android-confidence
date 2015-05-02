@@ -18,6 +18,44 @@
         android:layout_below="@+id/pass"
         android:layout_centerHorizontal="true"
         android:text="enter"
-        android:id="@+id/btn"/>
+        android:id="@+id/btn"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What will you drink today?"
+        android:layout_below="@+id/btn"
+        android:id="@+id/txt"/>
+
+    <CheckBox
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Whiskey"
+        android:id="@+id/checkBox"
+        android:layout_below="@+id/txt"/>
+
+    <CheckBox
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Brandy"
+        android:id="@+id/checkBox2"
+        android:layout_below="@+id/checkBox"/>
+
+    <CheckBox
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Wine"
+        android:id="@+id/checkBox3"
+        android:layout_below="@+id/checkBox2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn2"
+        android:layout_below="@+id/checkBox2"
+        android:layout_centerHorizontal="true"
+        android:text="submit"
+        android:layout_margin="50dp"/>
 
 </RelativeLayout>

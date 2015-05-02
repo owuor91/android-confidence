@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,13 +14,15 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
     private EditText pass;
-    private Button btn;
+    private Button btn, btn2;
+    private CheckBox check1, check2, check3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addListener();
+        btn2Click();
     }
 
   /*  public void onButtonClick(View v){
@@ -43,26 +46,23 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
+    public void btn2Click(){
+        check1 = (CheckBox)findViewById(R.id.checkBox);
+        check2 = (CheckBox)findViewById(R.id.checkBox2);
+        check3 = (CheckBox)findViewById(R.id.checkBox3);
+        btn2 = (Button)findViewById(R.id.btn2);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StringBuffer result = new StringBuffer();
+                result.append("Whiskey : ").append(check1.isChecked());
+                result.append("\nBrandy : ").append(check2.isChecked());
+                result.append("\nWine : ").append(check3.isChecked());
+                Toast.makeText(MainActivity.this, result.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+    p
 }
