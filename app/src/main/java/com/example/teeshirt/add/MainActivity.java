@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         addListener();
         btn2Click();
+        checkBoxListener();
     }
 
   /*  public void onButtonClick(View v){
@@ -64,5 +65,15 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    p
+    public void checkBoxListener(){
+        check1 = (CheckBox)findViewById(R.id.checkBox);
+        check1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox)v).isChecked()){
+                    Toast.makeText(MainActivity.this,"You have selected Whiskey", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
 }
