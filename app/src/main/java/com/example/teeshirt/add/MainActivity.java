@@ -5,19 +5,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+    private EditText pass;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        addListener();
     }
 
-    public void onButtonClick(View v){
+  /*  public void onButtonClick(View v){
         EditText e1 = (EditText)findViewById(R.id.editText);
         EditText e2 = (EditText)findViewById(R.id.editText2);
         TextView t1 = (TextView)findViewById(R.id.textView);
@@ -25,6 +30,17 @@ public class MainActivity extends ActionBarActivity {
         int num2 = Integer.parseInt(e2.getText().toString());
         int sum = num1 + num2;
         t1.setText(Integer.toString(sum));
+    }*/
+
+    public void addListener(){
+        pass = (EditText)findViewById(R.id.pass);
+        btn = (Button)findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, pass.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
